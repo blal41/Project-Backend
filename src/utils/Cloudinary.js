@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
-import fs from fs; // file system default with node js
+import fs from 'fs'; 
 
 
           
@@ -20,7 +20,8 @@ const uploadOnCloudinary = async (localfilepath) =>{
         })
 
         // file has been uploaded successfully
-        console.log("file is uploaded on cloudinary : ",response.url);
+        // console.log("file is uploaded on cloudinary : ",response.url);
+        fs.unlinkSync(localfilepath) 
         return response;
 
     } catch(error){
